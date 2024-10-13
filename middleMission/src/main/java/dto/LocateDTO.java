@@ -11,6 +11,17 @@ public class LocateDTO {
 		this.xPosition = xPosition;
 		this.yPosition = yPosition;
 	}
+	public LocateDTO(int idx, double xPosition, double yPosition, String selectDate) {
+		this.idx = idx;
+		this.xPosition = xPosition;
+		this.yPosition = yPosition;
+		this.seleteDate = selectDate;
+	}
+	@Override
+	public String toString() {
+		return "LocateDTO [idx=" + idx + ", xPosition=" + xPosition + ", yPosition=" + yPosition + ", seleteDate="
+				+ seleteDate + "]";
+	}
 	public int getIdx() {
 		return idx;
 	}

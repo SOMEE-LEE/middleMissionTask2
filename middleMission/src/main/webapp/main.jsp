@@ -62,7 +62,7 @@ td {
 <body>
 	<h1>와이파이 정보 구하기</h1>
 	<div class="href">
-		<a href="main.lsm">홈</a> <a href="#">위치 히스토리 목록</a> <a href="#">Open API
+		<a href="main.lsm">홈</a> <a href="history.lsm">위치 히스토리 목록</a> <a href="#">Open API
 			와이파이 정보 가져오기</a>
 	</div>
 	<form action="post">
@@ -122,7 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	        dataType: 'json',
 	        data: JSON.stringify({ x, y }),
 	        success: function(response) {
-	            console.log(response);
+	            console.log("insert success!");
+	            console.log(JSON.stringify({ x, y }));
 	        },
 	        error: function(request, status, error) {
 	            console.log(request, status, error);

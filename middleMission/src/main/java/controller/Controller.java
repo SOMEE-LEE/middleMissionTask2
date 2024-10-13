@@ -3,6 +3,7 @@ package controller;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -66,18 +67,15 @@ public class Controller extends HttpServlet{
 		    LocateDTO dto = new LocateDTO(xPosition, yPosition);
 		    dao.insertLocate(dto);
 		    
-		    // 응답 생성
-//		    JSONObject jsonResponse = new JSONObject();
-//		    jsonResponse.put("response", 0); // 응답 결과
-//
-//		    // 응답 설정
-//		    response.setContentType("application/json");
-//		    response.setCharacterEncoding("utf-8");
-//
-//		    // 응답 전송
-//		    PrintWriter out = response.getWriter();
-//		    out.print(jsonResponse.toString());
-//		    out.flush();
+		    response.setContentType("application/json; charset=utf-8");
+		    jsonRequest.put("response", 0);
+		} else if (action.equals("/history.lsm")) {
+			LocateDAO dao = new LocateDAO();
+			
+			List<LocateDTO> dtos = dao.selectList(); 
+			request.setAttribute("dtos", dtos);
+			
+			request.getRequestDispatcher("/history.jsp").forward(request, response);
 		}
 	}
 }
