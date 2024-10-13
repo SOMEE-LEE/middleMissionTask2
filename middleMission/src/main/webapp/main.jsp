@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>와이파이 정보 구하기</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+	crossorigin="anonymous"></script>
 <style>
 .href {
 	margin-bottom: 15px;
@@ -59,7 +62,7 @@ td {
 <body>
 	<h1>와이파이 정보 구하기</h1>
 	<div class="href">
-		<a href="#">홈</a> <a href="#">위치 히스토리 목록</a> <a href="#">Open API
+		<a href="main.lsm">홈</a> <a href="#">위치 히스토리 목록</a> <a href="#">Open API
 			와이파이 정보 가져오기</a>
 	</div>
 	<form action="post">
@@ -111,6 +114,20 @@ document.addEventListener('DOMContentLoaded', function() {
 	    const y = position.coords.longitude;  // X좌표 (경도)
 	    document.getElementById('xPosition').value = x; // 경도 (X좌표) 설정
 	    document.getElementById('yPosition').value = y; // 위도 (Y좌표) 설정
+	    
+	    $.ajax({
+	        url: '<%=request.getContextPath()%>/locatePro.lsm', // 여기서 컨텍스트 경로가 정확해야 합니다.
+	        contentType: "application/json",
+	        type: "POST",
+	        dataType: 'json',
+	        data: JSON.stringify({ x, y }),
+	        success: function(response) {
+	            console.log(response);
+	        },
+	        error: function(request, status, error) {
+	            console.log(request, status, error);
+	        }
+	    });
 	}
 
 	function showError(error) {
