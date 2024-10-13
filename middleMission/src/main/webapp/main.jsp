@@ -62,7 +62,7 @@ td {
 <body>
 	<h1>와이파이 정보 구하기</h1>
 	<div class="href">
-		<a href="main.lsm">홈</a> <a href="history.lsm">위치 히스토리 목록</a> <a href="#">Open API
+		<a href="main.lsm">홈</a> <a href="history.lsm">위치 히스토리 목록</a> <a href="bringWifi.lsm">Open API
 			와이파이 정보 가져오기</a>
 	</div>
 	<form action="post">
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	    document.getElementById('yPosition').value = y; // 위도 (Y좌표) 설정
 	    
 	    $.ajax({
-	        url: '<%=request.getContextPath()%>/locatePro.lsm', // 여기서 컨텍스트 경로가 정확해야 합니다.
+	        url: '<%=request.getContextPath()%>/locatePro.lsm',
 	        contentType: "application/json",
 	        type: "POST",
 	        dataType: 'json',

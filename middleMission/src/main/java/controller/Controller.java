@@ -76,6 +76,9 @@ public class Controller extends HttpServlet{
 			request.setAttribute("dtos", dtos);
 			
 			request.getRequestDispatcher("/history.jsp").forward(request, response);
+		} else if (action.equals("/bringWifi.lsm")) {
+			String path = "/bringWifi.jsp"; 
+			request.getRequestDispatcher(path).forward(request, response);
 		}
 	}
 }

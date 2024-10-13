@@ -68,7 +68,7 @@ td {
 <body>
 	<h1>위치 히스토리 목록</h1>
 	<div class="href">
-		<a href="main.lsm">홈</a> <a href="history.lsm">위치 히스토리 목록</a> <a href="#">Open API
+		<a href="main.lsm">홈</a> <a href="history.lsm">위치 히스토리 목록</a> <a href="bringWifi.lsm">Open API
 			와이파이 정보 가져오기</a>
 	</div>
 	<table>
