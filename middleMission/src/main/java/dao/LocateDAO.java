@@ -26,8 +26,8 @@ public class LocateDAO {
 			pstmt = conn.prepareStatement(sql);
 
 			// ?에 들어갈 컬럼들 세팅
-			pstmt.setLong(1, (long) dto.getxPosition());
-			pstmt.setLong(2, (long) dto.getyPosition());
+			pstmt.setDouble(1, dto.getxPosition());
+			pstmt.setDouble(2, dto.getyPosition());
 
 			// execute 실행
 			pstmt.executeUpdate();

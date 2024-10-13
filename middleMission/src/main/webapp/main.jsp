@@ -123,10 +123,10 @@ document.addEventListener('DOMContentLoaded', function() {
 	        data: JSON.stringify({ x, y }),
 	        success: function(response) {
 	            console.log("insert success!");
-	            console.log(JSON.stringify({ x, y }));
+//	            console.log(JSON.stringify({ x, y }));
 	        },
 	        error: function(request, status, error) {
-	            console.log(request, status, error);
+	            //console.log(request, status, error);
 	        }
 	    });
 	}
